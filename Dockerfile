@@ -38,6 +38,7 @@ COPY assets/tools/ /usr/bin/
 COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod 755 /sbin/entrypoint.sh
 
+VOLUME ["${NEXTCLOUD_INSTALL_DIR}/apps"]
 VOLUME ["${NEXTCLOUD_DATA_DIR}"]
 WORKDIR ${NEXTCLOUD_INSTALL_DIR}
 ENTRYPOINT ["/sbin/entrypoint.sh"]

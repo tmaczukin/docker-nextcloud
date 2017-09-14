@@ -11,6 +11,7 @@ fi
 echo "Extracting Nextcloud ${NEXTCLOUD_VERSION}..."
 tar -xf ${NEXTCLOUD_BUILD_DIR}/nextcloud-${NEXTCLOUD_VERSION}.tar.bz2 --strip=1 -C ${NEXTCLOUD_INSTALL_DIR}
 rm -rf ${NEXTCLOUD_BUILD_DIR}/nextcloud-${NEXTCLOUD_VERSION}.tar.bz2
+cp -a ${NEXTCLOUD_INSTALL_DIR}/apps ${NEXTCLOUD_INSTALL_DIR}/apps_orig
 
 # required by nextcloud
 sed -i "s|[;]*[ ]*always_populate_raw_post_data = .*|always_populate_raw_post_data = -1|" /etc/php/${PHP_VERSION}/fpm/php.ini
@@ -26,6 +27,7 @@ find ${NEXTCLOUD_INSTALL_DIR}/ -type f -print0 | xargs -0 chmod 0640
 find ${NEXTCLOUD_INSTALL_DIR}/ -type d -print0 | xargs -0 chmod 0750
 chown -R root:${NEXTCLOUD_USER} ${NEXTCLOUD_INSTALL_DIR}/
 chown -R ${NEXTCLOUD_USER}: ${NEXTCLOUD_INSTALL_DIR}/apps/
+chown -R ${NEXTCLOUD_USER}: ${NEXTCLOUD_INSTALL_DIR}/apps_orig/
 chown -R ${NEXTCLOUD_USER}: ${NEXTCLOUD_INSTALL_DIR}/config/
 chown -R ${NEXTCLOUD_USER}: ${NEXTCLOUD_INSTALL_DIR}/themes/
 chown root:${NEXTCLOUD_USER} ${NEXTCLOUD_INSTALL_DIR}/.htaccess

@@ -598,3 +598,13 @@ backup_restore() {
   backup_restore_directory ${NEXTCLOUD_CONFIG_DIR} .tar.gz
   backup_restore_directory ${NEXTCLOUD_OCDATA_DIR} .tar
 }
+
+setup_apps_from_original() {
+  apps_dir="${NEXTCLOUD_INSTALL_DIR}/apps"
+  apps_orig_dir="${NEXTCLOUD_INSTALL_DIR}/apps_orig"
+  apps=$(ls ${apps_dir})
+  if [[ -z "${apps}" ]]; then
+      ls ${apps_dir}
+      cp -a ${apps_orig_dir}/* ${apps_dir}/
+  fi
+}
