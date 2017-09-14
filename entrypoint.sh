@@ -5,7 +5,7 @@ source ${NEXTCLOUD_RUNTIME_DIR}/functions
 [[ $DEBUG == true ]] && set -x
 
 case ${1} in
-  app:nextcloud|app:nginx|app:backup:create|app:backup:restore|occ)
+  app:nextcloud|app:nginx|app:backup:create|app:backup:restore|storage:apps|occ)
 
     initialize_system
 
@@ -28,6 +28,9 @@ case ${1} in
         shift 1
         backup_restore $@
         ;;
+      storage:apps)
+        nextcloud_setup_apps_from_original
+        ;;
       occ)
         exec $@
         ;;
@@ -41,6 +44,7 @@ case ${1} in
     echo " app:backup:create    - Create a backup"
     echo " app:backup:restore   - Restore an existing backup"
     echo " app:help             - Displays the help"
+    echo " storage:apps         - Setup apps/ directory if it's an ampty volume"
     echo " [command]            - Execute the specified command, eg. bash."
     ;;
   *)
