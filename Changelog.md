@@ -1,5 +1,8 @@
 # ChangeLog
 
+**13.0.4**
+- nextcloud: upgrade to 13.0.4
+
 **13.0.2**
 - nextcloud: upgrade to 13.0.2
 
