@@ -2,6 +2,7 @@
 
 **latest**
 - ubuntu: update to 16.04
+- nextcloud: upgrade to 14.0.4
 
 **14.0.1**
 - nextcloud: upgrade to 14.0.1
