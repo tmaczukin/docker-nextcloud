@@ -1,6 +1,6 @@
 # ChangeLog
 
-**latest**
+**15.0.4**
 - nextcloud: upgrade to 15.0.4
 
 **14.0.4**
