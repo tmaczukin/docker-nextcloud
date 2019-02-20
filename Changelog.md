@@ -1,5 +1,8 @@
 # ChangeLog
 
+**15.0.4**
+- nextcloud: upgrade to 15.0.4
+
 **14.0.4**
 - ubuntu: update to 16.04
 - nextcloud: upgrade to 14.0.4
