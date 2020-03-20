@@ -2,7 +2,7 @@
 
 **latest**
 - nextcloud: upgrade to 18.0.2
-- php: upgrade to 7.1
+- php: upgrade to 7.2
 
 **15.0.4**
 - nextcloud: upgrade to 15.0.4
