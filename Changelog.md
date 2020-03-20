@@ -1,7 +1,7 @@
 # ChangeLog
 
 **latest**
-- nextcloud: upgrade to 16.0.1
+- nextcloud: upgrade to 18.0.2
 - php: upgrade to 7.1
 
 **15.0.4**
